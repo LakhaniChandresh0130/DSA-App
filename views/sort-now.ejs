@@ -1,0 +1,67 @@
+<%- include("./partials/header.ejs"); %>
+
+  <!-- Sorting Controls -->
+  <div class="container-fluid  px-5 py-2 mt-1 text-white" style="background-color: #34495e;">
+
+    <div class="d-grid gap-2">
+      <h5 class="text-center my-2">
+        Algorithm :   <%= title %> Sort
+      </h5>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-2">
+        <label for="size" class="form-label">Array Size</label>
+        <input type="range" class="form-range" min="15" max="300" step="5" id="size" value="50" />
+      </div>
+      <div class="col-2">
+        <label for="speed" class="form-label">Speed</label>
+        <input type="range" class="form-range" min="0" max="5" step="1" id="speed" value="3">
+      </div>
+      <div class="col-2">
+        <div class="d-grid gap-2">
+          <button class="btn btn-outline-light" type="button" id="generate">Generate New Array</button>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="d-grid gap-2">
+          <button class="btn btn-outline-light" type="button" id="reset" >Reset</button>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="d-grid gap-2">
+          <button class="btn btn-outline-light" type="button" id="sort" value="<%= title %>">Start Sorting</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add sorting algorithms script -->
+  <% if(title==='Bubble' ){ %>
+    <script src="/javascripts/sorting/bubble-sort.js"></script>
+  <% } %>
+
+  <% if(title==='Merge' ){ %>
+    <script src="/javascripts/sorting/merge-sort.js"></script>
+  <% } %>
+
+  <% if(title==='Insertion' ){ %>
+    <script src="/javascripts/sorting/insertion-sort.js"></script>
+  <% } %>
+
+  <% if(title==='Selection' ){ %>
+    <script src="/javascripts/sorting/selection-sort.js"></script>
+  <% } %>
+
+  <% if(title==='Heap' ){ %>
+    <script src="/javascripts/sorting/heap-sort.js"></script>
+  <% } %>
+
+  <div class="px-3">
+    <div class="mt-3 bg-light" id="main">
+      <!-- Main container -->
+    </div>
+  </div>
+
+  <script src="/javascripts/sorting/control.js"></script>
+
+<%- include("./partials/footer.ejs"); %>
